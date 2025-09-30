@@ -1,73 +1,32 @@
-# Welcome to your Lovable project
+# 🚀 Ziad El-Sayed - Portfolio
 
-## Project info
+Welcome to my personal **portfolio website** – built to showcase my front-end development skills, personal projects, and professional experience.
 
-**URL**: https://lovable.dev/projects/625eb77c-fbb2-43e0-8f86-c045b5ac9daf
+🔗 **Live Demo**: [View Portfolio](https://portfolio-hazel-psi-37.vercel.app/)
 
-## How can I edit this code?
+## 📸 Overview
 
-There are several ways of editing your application.
+This portfolio is a responsive and animated website created with modern web technologies. It highlights my featured projects, technical stack, and contact information — tailored for recruiters and collaborators who want to learn more about me.
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/625eb77c-fbb2-43e0-8f86-c045b5ac9daf) and start prompting.
+## 🛠️ Built With
 
-Changes made via Lovable will be committed automatically to this repo.
+- **React.js** – Frontend library for building UI
+- **Tailwind CSS** – Utility-first CSS framework for rapid design
+- **Framer Motion** – Smooth animations and transitions
+- **Lucide Icons** – Clean and modern icon set
+- **Vite** – Blazing-fast dev server and build tool
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 📁 Features
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- ✅ Smooth scroll and section transitions
+- ✅ Fully responsive across all devices
+- ✅ Animated section reveal on scroll
+- ✅ Project cards with live demo and GitHub links
+- ✅ Dark-themed modern UI with glassmorphism effect
+- ✅ Clean code and component-based structure
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/625eb77c-fbb2-43e0-8f86-c045b5ac9daf) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+---
