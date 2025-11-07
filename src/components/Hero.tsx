@@ -41,7 +41,7 @@ const Hero = () => {
             <p className="text-primary text-2xl font-medium tracking-wider">
               Hello <span className="inline-block animate-bounce">👋</span>, I'm
             </p>
-            <div className="text-7xl font-bold">
+            <div className="text-5xl md:text-7xl font-bold">
               <Typewriter
                 options={{
                   strings: ["Ziad El-Sayed"],
