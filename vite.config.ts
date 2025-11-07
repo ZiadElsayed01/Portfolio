@@ -11,8 +11,4 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-<<<<<<< HEAD
-}));
-=======
 });
->>>>>>> f2c8752 (Initial commit)

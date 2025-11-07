@@ -1,6 +1,7 @@
 import { ChevronDown, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ziad from "../assets/ZiadEl-Sayed.png";
+import Typewriter from "typewriter-effect";
 
 const Hero = () => {
   return (
@@ -12,13 +13,21 @@ const Hero = () => {
         <div className="relative space-y-8 text-center md:text-left animate-fade-in py-6 px-6 md:px-3">
           <div className="space-y-4">
             <p className="text-primary text-2xl font-medium tracking-wider">
-              Hello, I'm
+              Hello <span className="inline-block animate-bounce">👋</span>, I'm
             </p>
-            <h1 className="text-6xl md:text-7xl font-bold gradient-text">
-              Ziad El-Sayed
-            </h1>
+            <div className="text-7xl font-bold">
+              <Typewriter
+                options={{
+                  strings: ["Ziad El-Sayed"],
+                  autoStart: true,
+                  loop: true,
+                  cursor: "|",
+                  cursorClassName: "typewriter-cursor",
+                }}
+              />
+            </div>
             <h2 className="text-3xl md:text-4xl font-semibold text-foreground/90">
-              Frontend Developer
+              Frontend Developer 🖌️💻
             </h2>
           </div>
 
