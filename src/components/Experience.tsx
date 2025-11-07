@@ -71,7 +71,7 @@ const Experience = () => {
         <div className="max-w-5xl mx-auto space-y-12">
           <div className="text-center space-y-4 animate-slide-up">
             <h2 className="text-5xl font-bold gradient-text">Experience</h2>
-            <div className="h-1 w-20 bg-linear-to-r from-primary to-secondary mx-auto rounded-full" />
+            <div className="h-1 w-28 bg-linear-to-r from-primary to-secondary mx-auto rounded-full" />
           </div>
 
           <div className="space-y-6">

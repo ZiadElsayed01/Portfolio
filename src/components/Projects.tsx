@@ -5,48 +5,75 @@ import { Badge } from "@/components/ui/badge";
 
 const projects = [
   {
+    title: "Cure",
+    description:
+      "Modern web application that makes it easy for patients to find doctors across different specialties, book appointments, and manage their healthcare seamlessly.",
+    tech: ["React", "TypeScript", "Tailwind CSS", "Context API", "Shadcn UI"],
+    github: "https://github.com/ZiadElsayed01/Cure_FE",
+    demo: "https://onlinebookingdoctor.netlify.app/get-start",
+  },
+  {
     title: "SavvyHost Dashboard",
-    description: "Built a responsive dashboard for SavvyHost to manage websites and client data. Optimized performance up to 90% and SEO with Next.js rendering strategies.",
-    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-    featured: true
+    description:
+      "Built a responsive dashboard for SavvyHost to manage websites and client data. Optimized performance up to 90% and SEO with Next.js rendering strategies.",
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Shadcn UI"],
   },
   {
     title: "MIS Web Application",
-    description: "Full-stack Management Information System with scalable backend and dynamic frontend featuring responsive, user-friendly interface.",
-    tech: ["Next.js", "React", "Node.js", "TypeScript"],
+    description:
+      "Full-stack Management Information System with scalable backend and dynamic frontend featuring responsive, user-friendly interface.",
+    tech: [
+      "Next.js",
+      "React",
+      "Node.js",
+      "TypeScript",
+      "Shadcn UI",
+      "Tailwind CSS",
+      "Context API",
+    ],
     github: "https://github.com/kofta999/grad-project",
-    demo: "https://grad-project-3nle0xg1t-kofta999s-projects.vercel.app/",
-    featured: true
+    demo: "https://grad-project-mis.vercel.app/login",
   },
   {
     title: "Fresh Cart",
-    description: "Full-featured E-Commerce platform with responsive design, modern UI, and complete shopping cart functionality.",
-    tech: ["React.js", "Tailwind CSS", "JavaScript"],
+    description:
+      "Full-featured E-Commerce platform with responsive design, modern UI, and complete shopping cart functionality.",
+    tech: ["React", "Tailwind CSS", "JavaScript"],
     github: "https://github.com/ZiadElsayed01/Freshcart",
     demo: "https://fresh-cart-route.vercel.app/login",
-    featured: true
   },
   {
     title: "Yummy",
-    description: "Recipe discovery web application with dynamic recipe exploration, external API integration, and responsive design.",
-    tech: ["HTML", "CSS", "JavaScript", "Tailwind CSS", "API"],
+    description:
+      "Recipe discovery web application with dynamic recipe exploration, external API integration, and responsive design.",
+    tech: ["HTML", "CSS", "JavaScript", "Tailwind CSS", "API", "jQuery"],
     github: "https://github.com/ZiadElsayed01/Yummy",
-    demo: "https://ziadelsayed01.github.io/Yummy/"
+    demo: "https://ziadelsayed01.github.io/Yummy/",
+  },
+  {
+    title: "Daniels",
+    description:
+      "A Personal portfolio website using HTML, CSS, JavaScript, and Bootstrap to showcase projects and skills interactively.",
+    tech: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+    github: "https://github.com/ZiadElsayed01/Daniels",
+    demo: "https://ziadelsayed01.github.io/Daniels/",
   },
   {
     title: "Weather App",
-    description: "Real-time weather application fetching data through external API with Bootstrap responsive design.",
+    description:
+      "Real-time weather application fetching data through external API with Bootstrap responsive design.",
     tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "API"],
     github: "https://github.com/ZiadElsayed01/Weather-API",
-    demo: "https://ziadelsayed01.github.io/Weather-API/"
+    demo: "https://ziadelsayed01.github.io/Weather-API/",
   },
   {
     title: "Games Platform",
-    description: "Gaming information platform providing comprehensive game database using external APIs with user-friendly interface.",
+    description:
+      "Gaming information platform providing comprehensive game database using external APIs with user-friendly interface.",
     tech: ["HTML", "CSS", "JavaScript", "Bootstrap"],
     github: "https://github.com/ZiadElsayed01/Games-API",
-    demo: "https://ziadelsayed01.github.io/Games-API/"
-  }
+    demo: "https://ziadelsayed01.github.io/Games-API/",
+  },
 ];
 
 const Projects = () => {
@@ -55,32 +82,30 @@ const Projects = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="text-center space-y-4 animate-slide-up">
-            <h2 className="text-5xl font-bold gradient-text">Featured Projects</h2>
-            <div className="h-1 w-20 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full" />
+            <h2 className="text-5xl font-bold gradient-text">Projects</h2>
+            <div className="h-1 w-28 bg-linear-to-r from-primary to-secondary mx-auto rounded-full" />
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               A showcase of my recent work and personal projects
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
             {projects.map((project, index) => (
-              <Card 
+              <Card
                 key={index}
-                className={`glass p-6 space-y-4 hover:shadow-glow transition-all duration-500 group animate-slide-up ${
-                  project.featured ? 'md:col-span-2 lg:col-span-1' : ''
-                }`}
+                className="p-6 relative space-y-4 hover:shadow-glow transition-all duration-500 group animate-slide-up"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
+                <div className="absolute -top-10 right-5">
+                  <p className="text-[140px] font-semibold text-foreground/10">
+                    {index + 1}
+                  </p>
+                </div>
                 <div className="space-y-3">
-                  <div className="flex items-start justify-between">
-                    <h3 className="text-2xl font-semibold text-foreground group-hover:text-secondary transition-colors">
-                      {project.title}
-                    </h3>
-                    {project.featured && (
-                      <Badge className="bg-accent/20 text-accent border-accent/30">Featured</Badge>
-                    )}
-                  </div>
-                  
+                  <h3 className="text-2xl font-semibold text-foreground">
+                    {project.title}
+                  </h3>
+
                   <p className="text-foreground/80 leading-relaxed">
                     {project.description}
                   </p>
@@ -88,10 +113,10 @@ const Projects = () => {
 
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech, i) => (
-                    <Badge 
-                      key={i} 
+                    <Badge
+                      key={i}
                       variant="outline"
-                      className="border-primary/30 text-primary hover:bg-primary/10"
+                      className="border-primary text-primary hover:border-primary hover:bg-foreground hover:text-background text-md"
                     >
                       {tech}
                     </Badge>
@@ -103,10 +128,14 @@ const Projects = () => {
                     <Button
                       variant="outline"
                       size="sm"
-                      className="flex-1 border-primary/50 hover:bg-primary/10 hover:border-primary group-hover:scale-105 transition-all"
+                      className="flex-1 border-primary/50 hover:bg-foreground hover:text-background hover:border-primary hover:scale-105 transition-all"
                       asChild
                     >
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <Github size={16} className="mr-2" />
                         Code
                       </a>
@@ -115,10 +144,14 @@ const Projects = () => {
                   {project.demo && (
                     <Button
                       size="sm"
-                      className="flex-1 bg-primary hover:bg-primary/90 group-hover:scale-105 transition-all"
+                      className="flex-1 bg-primary hover:bg-background hover:text-primary border hover:border-primary hover:scale-105 transition-all"
                       asChild
                     >
-                      <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <ExternalLink size={16} className="mr-2" />
                         Demo
                       </a>
