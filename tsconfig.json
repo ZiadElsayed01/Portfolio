@@ -9,6 +9,9 @@
     }
   ],
   "compilerOptions": {
+    "incremental": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
