@@ -29,7 +29,6 @@ const Navigation = () => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.3 }}
-      className="fixed top-0 left-0 w-full bg-background/70 backdrop-blur-md z-50"
     >
       <nav
         className={`sticky bg-background top-0 left-0 p-4 right-0 z-50 transition-all duration-300 ${
