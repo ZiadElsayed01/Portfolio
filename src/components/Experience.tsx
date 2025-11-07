@@ -1,5 +1,7 @@
+import { motion } from "framer-motion";
 import { Briefcase, Calendar } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import type { Variants } from "motion";
 
 const experiences = [
   {
@@ -62,67 +64,116 @@ const experiences = [
 ];
 
 const Experience = () => {
+  // Animation variants
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const cardVariants: Variants = {
+    hidden: { opacity: 0, y: 50, rotateX: -15, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      rotateX: 0,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <section
       id="experience"
       className="py-24 relative bg-linear-to-b from-background to-muted/20"
     >
       <div className="mx-auto px-6">
-        <div className="max-w-5xl mx-auto space-y-12">
-          <div className="text-center space-y-4 animate-slide-up">
-            <h2 className="text-5xl font-bold gradient-text">Experience</h2>
-            <div className="h-1 w-28 bg-linear-to-r from-primary to-secondary mx-auto rounded-full" />
-          </div>
+        <motion.div
+          className="max-w-5xl mx-auto space-y-12"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={containerVariants}
+        >
+          {/* Section Header */}
+          <motion.div variants={cardVariants} className="text-center space-y-4">
+            <h2 className="text-5xl font-bold linear-text">Experience</h2>
+            <motion.div
+              className="h-1 w-28 bg-linear-to-r from-primary to-secondary mx-auto rounded-full"
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+            />
+          </motion.div>
 
-          <div className="space-y-6">
+          {/* Experience Cards */}
+          <motion.div className="space-y-6" variants={containerVariants}>
             {experiences.map((exp, index) => (
-              <Card
-                key={index}
-                className="p-8 hover:shadow-glow transition-all duration-500 animate-slide-up"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="flex flex-col md:flex-row gap-6">
-                  <div className="p-3 rounded-xl bg-primary/10 text-primary self-start">
-                    <Briefcase size={28} />
-                  </div>
+              <motion.div key={index} variants={cardVariants}>
+                <Card className="p-8 hover:shadow-glow hover:scale-[1.02] transition-all duration-500">
+                  <div className="flex flex-col md:flex-row gap-6">
+                    <motion.div
+                      initial={{ rotate: -20, opacity: 0 }}
+                      animate={{ rotate: 0, opacity: 1 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      className="p-3 rounded-xl bg-primary/10 text-primary self-start"
+                    >
+                      <Briefcase size={28} />
+                    </motion.div>
 
-                  <div className="flex-1 space-y-4">
-                    <div className="space-y-2">
-                      <div className="flex flex-wrap items-start justify-between gap-2">
-                        <div>
-                          <h3 className="text-2xl font-semibold text-foreground">
-                            {exp.title}
-                          </h3>
-                          <p className="text-2xl text-primary/80">
-                            {exp.company}
-                          </p>
+                    <div className="flex-1 space-y-4">
+                      <div className="space-y-2">
+                        <div className="flex flex-wrap items-start justify-between gap-2">
+                          <div>
+                            <h3 className="text-2xl font-semibold text-foreground">
+                              {exp.title}
+                            </h3>
+                            <p className="text-2xl text-primary/80">
+                              {exp.company}
+                            </p>
+                          </div>
+                          <span className="px-3 py-1 bg-primary text-secondary text-xl rounded-md">
+                            {exp.type}
+                          </span>
                         </div>
-                        <span className="px-3 py-1 bg-primary text-secondary text-xl">
-                          {exp.type}
-                        </span>
+                        <div className="flex items-center gap-2 text-muted-foreground text-xl">
+                          <Calendar size={20} />
+                          <span>{exp.period}</span>
+                        </div>
                       </div>
-                      <div className="flex items-center gap-2 text-muted-foreground text-xl">
-                        <Calendar size={20} />
-                        <span>{exp.period}</span>
+
+                      <div className="space-y-2">
+                        {exp.achievements.map((achievement, i) => (
+                          <motion.li
+                            key={i}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{
+                              duration: 0.5,
+                              delay: index * 0.1 + i * 0.1,
+                            }}
+                            className="flex gap-3 text-foreground/80"
+                          >
+                            <span className="text-primary mt-1">▸</span>
+                            <span className="text-xl leading-relaxed">
+                              {achievement}
+                            </span>
+                          </motion.li>
+                        ))}
                       </div>
                     </div>
-
-                    <ul className="space-y-2">
-                      {exp.achievements.map((achievement, i) => (
-                        <li key={i} className="flex gap-3 text-foreground/80">
-                          <span className="text-primary mt-1">▸</span>
-                          <span className="text-xl leading-relaxed">
-                            {achievement}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
                   </div>
-                </div>
-              </Card>
+                </Card>
+              </motion.div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

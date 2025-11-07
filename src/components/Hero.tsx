@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { ChevronDown, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ziad from "../assets/ZiadEl-Sayed.png";
@@ -7,11 +8,36 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="flex items-center justify-center overflow-hidden"
+      className="flex items-center justify-center overflow-hidden min-h-screen"
     >
-      <div className="flex flex-wrap justify-center items-center z-10">
-        <div className="relative space-y-8 text-center md:text-left animate-fade-in py-6 px-6 md:px-3">
-          <div className="space-y-4">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="flex flex-wrap justify-center items-center z-10"
+      >
+        {/* Left content */}
+        <motion.div
+          className="relative space-y-8 text-center md:text-left py-6 px-6 md:px-3"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.2,
+              },
+            },
+          }}
+        >
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.6 }}
+            className="space-y-4"
+          >
             <p className="text-primary text-2xl font-medium tracking-wider">
               Hello <span className="inline-block animate-bounce">👋</span>, I'm
             </p>
@@ -29,15 +55,29 @@ const Hero = () => {
             <h2 className="text-3xl md:text-4xl font-semibold text-foreground/90">
               Frontend Developer 🖌️💻
             </h2>
-          </div>
+          </motion.div>
 
-          <p className="text-2xl text-muted-foreground max-w-lg mx-auto leading-relaxed">
+          <motion.p
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.7 }}
+            className="text-2xl text-muted-foreground max-w-lg mx-auto leading-relaxed"
+          >
             Building responsive, scalable applications with modern web
             technologies. Passionate about creating seamless user experiences
             and solving real-world problems.
-          </p>
+          </motion.p>
 
-          <div className="flex justify-center md:justify-start gap-4">
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.8 }}
+            className="flex justify-center md:justify-start gap-4"
+          >
             <Button
               size="lg"
               className="bg-primary hover:bg-primary-foreground text-primary-foreground hover:text-primary text-lg border hover:border-primary shadow-glow transition-all duration-300 hover:scale-105"
@@ -61,9 +101,16 @@ const Hero = () => {
             >
               View Projects
             </Button>
-          </div>
+          </motion.div>
 
-          <div className="flex justify-center md:justify-start gap-6">
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 10 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.8 }}
+            className="flex justify-center md:justify-start gap-6"
+          >
             <a
               title="Github"
               href="https://github.com/ZiadElsayed01"
@@ -89,9 +136,9 @@ const Hero = () => {
             >
               <Mail size={28} />
             </a>
-          </div>
+          </motion.div>
 
-          <a
+          <motion.a
             title="Scroll Down"
             className="absolute cursor-pointer -bottom-5 left-1/2 -translate-x-1/2 animate-bounce"
             onClick={() =>
@@ -99,15 +146,24 @@ const Hero = () => {
                 .getElementById("about")
                 ?.scrollIntoView({ behavior: "smooth" })
             }
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5 }}
           >
             <ChevronDown className="text-primary" size={32} />
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
 
-        <div className="md:w-1/3">
+        {/* Image animation */}
+        <motion.div
+          className="md:w-1/3"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        >
           <img src={ziad} alt="Ziad El-Sayed" className="w-full" />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

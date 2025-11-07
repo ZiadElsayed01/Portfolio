@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { Code2, Layers, Palette, GitBranch, Wrench, Users } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -14,14 +17,15 @@ const skillCategories = [
     skills: [
       "React.js",
       "Next.js",
-      "Redux",
-      "Redux Toolkit",
       "jQuery",
       "Axios",
       "i18n",
       "React Query",
       "React Router",
       "Context API",
+      "Formik",
+      "Yup",
+      "Redux",
     ],
   },
   {
@@ -35,6 +39,8 @@ const skillCategories = [
       "Material UI",
       "Figma",
       "Canva",
+      "Motion.DEV",
+      "Lucide",
     ],
   },
   {
@@ -60,15 +66,28 @@ const skillCategories = [
   },
 ];
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0 },
+};
+
 const Skills = () => {
   return (
     <section
       id="skills"
       className="py-24 relative bg-linear-to-b from-muted/20 to-background"
     >
-      <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto space-y-12">
-          <div className="text-center space-y-4 animate-slide-up">
+      <div className="mx-auto px-6">
+        <div className="max-w-5xl mx-auto space-y-12">
+          {/* Title Section */}
+          <motion.div
+            className="text-center space-y-4"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             <h2 className="text-5xl font-bold gradient-text">
               Skills & Technologies
             </h2>
@@ -76,38 +95,59 @@ const Skills = () => {
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Tools and technologies I work with
             </p>
-          </div>
+          </motion.div>
 
+          {/* Skill Cards */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skillCategories.map((category, index) => {
               const Icon = category.icon;
               return (
-                <Card
+                <motion.div
                   key={index}
-                  className="p-6 hover:shadow-glow transition-all duration-500 group animate-slide-up"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  transition={{ duration: 0.5, delay: index * 0.15 }}
+                  viewport={{ once: true }}
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="p-2.5 rounded-lg bg-primary/10 text-primary">
-                      <Icon size={24} />
+                  <Card className="p-6 hover:shadow-glow transition-all duration-500">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="p-2.5 rounded-lg bg-primary/10 text-primary">
+                        <Icon size={24} />
+                      </div>
+                      <h3 className="text-xl font-semibold text-foreground">
+                        {category.title}
+                      </h3>
                     </div>
-                    <h3 className="text-xl font-semibold text-foreground">
-                      {category.title}
-                    </h3>
-                  </div>
 
-                  <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill, i) => (
-                      <Badge
-                        key={i}
-                        variant="secondary"
-                        className="border-primary text-primary hover:border-primary hover:bg-foreground hover:text-background text-md"
-                      >
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
-                </Card>
+                    <motion.div
+                      className="flex flex-wrap gap-2"
+                      variants={{
+                        hidden: { opacity: 0 },
+                        visible: {
+                          opacity: 1,
+                          transition: { staggerChildren: 0.05 },
+                        },
+                      }}
+                    >
+                      {category.skills.map((skill, i) => (
+                        <motion.div
+                          key={i}
+                          variants={{
+                            hidden: { opacity: 0, y: 10 },
+                            visible: { opacity: 1, y: 0 },
+                          }}
+                        >
+                          <Badge
+                            className="border-primary text-primary bg-background hover:bg-primary hover:text-background transition-all duration-300 text-md"
+                          >
+                            {skill}
+                          </Badge>
+                        </motion.div>
+                      ))}
+                    </motion.div>
+                  </Card>
+                </motion.div>
               );
             })}
           </div>
