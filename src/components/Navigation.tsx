@@ -8,7 +8,7 @@ const navItems = [
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
-  { label: "Contact", href: "#contact" }
+  { label: "Contact", href: "#contact" },
 ];
 
 const Navigation = () => {
@@ -24,18 +24,18 @@ const Navigation = () => {
   }, []);
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass shadow-lg py-4" : "bg-transparent py-6"
+    <nav
+      className={`sticky bg-background top-0 left-0 p-4 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? "shadow-lg py-6 border-b border-primary" : ""
       }`}
     >
-      <div className="container mx-auto px-6">
+      <div className="mx-auto md:px-16 px-6">
         <div className="flex items-center justify-between">
-          <a 
-            href="#home" 
-            className="text-2xl font-bold gradient-text hover:scale-105 transition-transform"
+          <a
+            href="#home"
+            className="text-4xl font-bold gradient-text hover:scale-105 transition-transform"
           >
-            ZE
+            ZE.
           </a>
 
           {/* Desktop Navigation */}
@@ -44,7 +44,7 @@ const Navigation = () => {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-foreground/80 hover:text-secondary transition-colors font-medium"
+                className="text-foreground/90 transition-all hover:text-foreground font-medium text-xl hover:scale-105"
               >
                 {item.label}
               </a>
@@ -64,12 +64,12 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-6 space-y-4 glass p-6 rounded-lg">
+          <div className="md:hidden mt-6 space-y-2 rounded-lg">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="block text-foreground/80 hover:text-secondary transition-colors font-medium py-2"
+                className="block text-foreground/90 hover:text-foreground transition-all font-medium py-2 text-xl hover:scale-105"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.label}
