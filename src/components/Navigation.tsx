@@ -26,7 +26,7 @@ const Navigation = () => {
   return (
     <nav
       className={`sticky bg-background top-0 left-0 p-4 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "shadow-lg py-6 border-b border-primary" : ""
+        isScrolled ? "shadow-lg py-5 border-b border-primary" : ""
       }`}
     >
       <div className="mx-auto md:px-16 px-6">
