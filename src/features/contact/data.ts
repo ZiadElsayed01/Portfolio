@@ -5,4 +5,5 @@ export const contactInfo = {
   whatsapp: "https://wa.me/201226642557",
   github: "https://github.com/ZiadElsayed01",
   linkedin: "https://linkedin.com/in/ziadel-sayed",
+  formspreeFormId: "mwleejow",
 };

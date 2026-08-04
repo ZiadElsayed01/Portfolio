@@ -34,6 +34,8 @@ export const Route = createFileRoute("/contact")({
 function ContactPage() {
   const { t } = useI18n();
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
   const details = [
     {
@@ -52,16 +54,38 @@ function ContactPage() {
     { icon: MapPin, label: t("contact.location"), value: t("contact.locationValue") },
   ];
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setSending(true);
+    setError("");
+
     const data = new FormData(event.currentTarget);
-    const name = String(data.get("name") ?? "");
-    const email = String(data.get("email") ?? "");
-    const message = String(data.get("message") ?? "");
-    const subject = encodeURIComponent(`Portfolio message from ${name}`);
-    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-    window.location.href = `mailto:${contactInfo.email}?subject=${subject}&body=${body}`;
-    setSent(true);
+    const formData = {
+      name: String(data.get("name") ?? ""),
+      email: String(data.get("email") ?? ""),
+      message: String(data.get("message") ?? ""),
+    };
+
+    try {
+      const response = await fetch(`https://formspree.io/f/${contactInfo.formspreeFormId}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSent(true);
+      } else {
+        const result = await response.json();
+        setError(result.error || "Failed to send message. Please try again.");
+      }
+    } catch (err) {
+      setError("Failed to send message. Please try again.");
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -126,22 +150,29 @@ function ContactPage() {
           <form onSubmit={handleSubmit} className="surface-panel space-y-4 p-6">
             <div className="space-y-2">
               <Label htmlFor="name">{t("contact.form.name")}</Label>
-              <Input id="name" name="name" required />
+              <Input id="name" name="name" required disabled={sending || sent} />
             </div>
             <div className="space-y-2">
               <Label htmlFor="email">{t("contact.form.email")}</Label>
-              <Input id="email" name="email" type="email" required />
+              <Input id="email" name="email" type="email" required disabled={sending || sent} />
             </div>
             <div className="space-y-2">
               <Label htmlFor="message">{t("contact.form.message")}</Label>
-              <Textarea id="message" name="message" rows={5} required />
+              <Textarea id="message" name="message" rows={5} required disabled={sending || sent} />
             </div>
-            <Button type="submit" size="lg" className="w-full rounded-full">
-              {t("contact.form.submit")}
+            <Button
+              type="submit"
+              size="lg"
+              className="w-full rounded-full"
+              disabled={sending || sent}
+            >
+              {sending ? "Sending..." : sent ? "Sent!" : t("contact.form.submit")}
             </Button>
-            {sent ? (
+            {error && <p className="text-center text-sm text-destructive">{error}</p>}
+            {sent && !error && (
               <p className="text-center text-sm text-muted-foreground">{t("contact.form.sent")}</p>
-            ) : (
+            )}
+            {!sent && !error && (
               <p className="text-center text-sm text-muted-foreground">{t("contact.outro")}</p>
             )}
           </form>
