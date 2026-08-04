@@ -89,7 +89,7 @@
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
 
-  --border: oklch(0.898 0.006 60);
+  --border: oklch(63.902% 0.00384 38.621 / 0.849);
   --input: oklch(0.898 0.006 60);
   --ring: oklch(0.628 0.176 39.5);
 
@@ -145,7 +145,7 @@
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.985 0 0);
 
-  --border: oklch(1 0 0 / 10%);
+  --border: oklch(100% 0.00011 271.152 / 0.607);
   --input: oklch(1 0 0 / 14%);
   --ring: oklch(0.672 0.185 39.5);
 

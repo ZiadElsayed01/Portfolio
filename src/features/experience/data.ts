@@ -11,6 +11,34 @@ export type ExperienceItem = {
 
 export const experiences: ExperienceItem[] = [
   {
+    id: "elevatetech",
+    role: { en: "Frontend Developer", ar: "مطوّر واجهات أمامية" },
+    company: "Elevate Tech",
+    type: { en: "Part-time", ar: "دوام جزئي" },
+    period: {
+      en: "February 2026 — Present",
+      ar: "فبراير 2026 — حتى الآن",
+    },
+    bullets: [
+      {
+        en: "Developed responsive web applications using Next.js (App Router) and React",
+        ar: "طورت تطبيقات ويب متجاوبة باستخدام Next.js (App Router) وReact",
+      },
+      {
+        en: "Implemented dynamic UI components and optimized application structure for scalability and performance",
+        ar: "نفذت مكونات واجهات ديناميكية وحسّنت هيكلة التطبيق لدعم قابلية التوسع والأداء",
+      },
+      {
+        en: "Integrated RESTful APIs and managed client-side and server-side data fetching in Next.js",
+        ar: "دمجت واجهات RESTful APIs وأدرت جلب البيانات على جانبي العميل والخادم في Next.js",
+      },
+      {
+        en: "Collaborated in an Agile team environment on feature development, debugging, and continuous improvement",
+        ar: "عملت ضمن فريق Agile في تطوير الميزات، وإصلاح الأخطاء، والتحسين المستمر للتطبيق",
+      },
+    ],
+  },
+  {
     id: "savvyhost",
     role: { en: "Frontend Developer", ar: "مطوّر واجهات أمامية" },
     company: "SavvyHost",
@@ -79,10 +107,10 @@ export const experiences: ExperienceItem[] = [
   },
   {
     id: "depi",
-    role: { en: "React.js Front-End Developer Intern", ar: "متدرّب تطوير واجهات React.js" },
+    role: { en: "React.js Front-End Developer", ar: "متدرّب تطوير واجهات React.js" },
     company: "Digital Egyptian Pioneer (DEPI)",
     type: { en: "Internship", ar: "تدريب" },
-    period: { en: "April 2024 — October 2025", ar: "أبريل 2024 — أكتوبر 2025" },
+    period: { en: "April 2024 — October 2024", ar: "أبريل 2024 — أكتوبر 2024" },
     bullets: [
       {
         en: "Developed 10+ reusable, modular React components, reducing code duplication by 30%",
@@ -99,27 +127,6 @@ export const experiences: ExperienceItem[] = [
       {
         en: "Enhanced web application performance by 20% through code optimization",
         ar: "حسّنت أداء التطبيقات بنسبة 20% عبر تحسين الكود",
-      },
-    ],
-  },
-  {
-    id: "gdsc",
-    role: { en: "Front-End Lead", ar: "قائد فريق الواجهات الأمامية" },
-    company: "Google Developer Student Club (GDSC)",
-    type: { en: "Leadership", ar: "قيادة" },
-    period: { en: "February 2023 — May 2023", ar: "فبراير 2023 — مايو 2023" },
-    bullets: [
-      {
-        en: "Directed a team of 5 students in planning and executing front-end projects",
-        ar: "قدت فريقاً من 5 طلاب في تخطيط وتنفيذ مشاريع الواجهات الأمامية",
-      },
-      {
-        en: "Conducted 4+ workshops on HTML, CSS, JavaScript and React.js",
-        ar: "قدّمت أكثر من 4 ورش عمل في HTML وCSS وJavaScript وReact.js",
-      },
-      {
-        en: "Enhanced technical ability of peers through mentoring and training",
-        ar: "طوّرت القدرات التقنية للزملاء عبر الإرشاد والتدريب",
       },
     ],
   },

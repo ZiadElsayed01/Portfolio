@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 
-import heroAsset from "@/assets/ziad-hero.png.asset.json";
+import heroAsset from "@/assets/hero.png";
 import { Button } from "@/components/ui/button";
 import { contactInfo } from "@/features/contact/data";
 import { projects } from "@/features/projects/data";
@@ -14,9 +14,9 @@ export function Hero() {
   const { t } = useI18n();
 
   const stats = [
-    { value: "3+", label: t("home.stat.years") },
+    { value: "React | Next", label: t("home.stat.stack") },
+    { value: "1+", label: t("home.stat.years") },
     { value: `${projects.length}`, label: t("home.stat.projects") },
-    { value: "React · Next", label: t("home.stat.stack") },
   ];
 
   return (
@@ -133,7 +133,7 @@ export function Hero() {
           <div className="absolute -inset-4 rounded-[2rem] bg-primary/12 blur-2xl" aria-hidden />
           <div className="relative overflow-hidden rounded-[1.75rem] border border-border ember-glow">
             <img
-              src={heroAsset.url}
+              src={heroAsset}
               alt="Ziad El-Sayed, frontend developer"
               width={1024}
               height={1024}

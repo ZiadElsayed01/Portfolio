@@ -23,10 +23,10 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
       <nav className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 md:px-8">
         <Link to="/" className="group flex items-center gap-2" onClick={() => setOpen(false)}>
-          <span className="grid size-8 place-items-center rounded-md bg-primary font-display text-sm font-extrabold text-primary-foreground">
+          <span className="grid size-10 place-items-center rounded-md bg-primary font-display text-lg font-extrabold text-primary-foreground">
             Z
           </span>
-          <span className="hidden font-display text-sm font-bold tracking-tight sm:block">
+          <span className="hidden font-display text-md font-bold tracking-tight sm:block">
             {t("nav.brand")}
           </span>
         </Link>

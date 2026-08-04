@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { GraduationCap } from "lucide-react";
 
-import heroAsset from "@/assets/ziad-hero.png.asset.json";
+import aboutAsset from "@/assets/about.png";
 import { PageShell } from "@/features/shared/components/page-shell";
 import { Reveal } from "@/features/shared/components/reveal";
 import { SectionHeader } from "@/features/shared/components/section-header";
@@ -41,7 +41,7 @@ function AboutPage() {
         <Reveal>
           <div className="overflow-hidden rounded-[1.5rem] border border-border ember-glow">
             <img
-              src={heroAsset.url}
+              src={aboutAsset}
               alt="Portrait of Ziad El-Sayed"
               loading="lazy"
               width={1024}

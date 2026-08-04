@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Github, GraduationCap, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 
-import heroAsset from "@/assets/ziad-hero.png.asset.json";
+import aboutAsset from "@/assets/about.png";
 import { Button } from "@/components/ui/button";
 import { contactInfo } from "@/features/contact/data";
 import { experiences } from "@/features/experience/data";
@@ -48,7 +48,7 @@ export function HomeSections() {
           <Reveal>
             <div className="overflow-hidden rounded-[1.5rem] border border-border ember-glow">
               <img
-                src={heroAsset.url}
+                src={aboutAsset}
                 alt="Portrait of Ziad El-Sayed"
                 loading="lazy"
                 width={1024}
@@ -58,7 +58,7 @@ export function HomeSections() {
             </div>
           </Reveal>
 
-          <div className="space-y-6">
+          <div className="space-y-4">
             <Reveal delay={0.05}>
               <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
                 {t("about.p1")}
