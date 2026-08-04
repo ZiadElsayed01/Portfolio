@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, MessageCircle } from "lucide-react";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -43,10 +43,11 @@ function ContactPage() {
       href: `mailto:${contactInfo.email}`,
     },
     {
-      icon: Phone,
+      icon: MessageCircle,
       label: t("contact.phone"),
       value: contactInfo.phone,
-      href: contactInfo.phoneHref,
+      href: contactInfo.whatsapp,
+      whatsapp: true,
     },
     { icon: MapPin, label: t("contact.location"), value: t("contact.locationValue") },
   ];
@@ -76,7 +77,9 @@ function ContactPage() {
           {details.map((detail, index) => (
             <Reveal key={detail.label} delay={index * 0.05}>
               <div className="surface-panel flex items-center gap-4 p-5">
-                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-primary/12 text-primary">
+                <span
+                  className={`grid size-11 shrink-0 place-items-center rounded-full ${detail.whatsapp ? "bg-[#25D366]/12 text-[#25D366]" : "bg-primary/12 text-primary"}`}
+                >
                   <detail.icon className="size-5" />
                 </span>
                 <div className="min-w-0">
@@ -86,7 +89,9 @@ function ContactPage() {
                   {detail.href ? (
                     <a
                       href={detail.href}
-                      className="block truncate text-sm font-semibold hover:text-primary"
+                      target="_blank"
+                      rel="noreferrer"
+                      className={`block truncate text-sm font-semibold ${detail.whatsapp ? "hover:text-[#25D366]" : "hover:text-primary"}`}
                       dir="ltr"
                     >
                       {detail.value}

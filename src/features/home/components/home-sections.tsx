@@ -1,5 +1,13 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Github, GraduationCap, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import {
+  ArrowRight,
+  Github,
+  GraduationCap,
+  Linkedin,
+  Mail,
+  MapPin,
+  MessageCircle,
+} from "lucide-react";
 
 import aboutAsset from "@/assets/about.png";
 import { Button } from "@/components/ui/button";
@@ -23,10 +31,11 @@ export function HomeSections() {
       href: `mailto:${contactInfo.email}`,
     },
     {
-      icon: Phone,
+      icon: MessageCircle,
       label: t("contact.phone"),
       value: contactInfo.phone,
-      href: contactInfo.phoneHref,
+      href: contactInfo.whatsapp,
+      whatsapp: true,
     },
     {
       icon: MapPin,
@@ -191,7 +200,9 @@ export function HomeSections() {
             {contactDetails.map((detail, index) => (
               <Reveal key={detail.label} delay={index * 0.05}>
                 <div className="surface-panel flex items-center gap-4 p-5">
-                  <span className="grid size-11 shrink-0 place-items-center rounded-full bg-primary/12 text-primary">
+                  <span
+                    className={`grid size-11 shrink-0 place-items-center rounded-full ${detail.whatsapp ? "bg-[#25D366]/12 text-[#25D366]" : "bg-primary/12 text-primary"}`}
+                  >
                     <detail.icon className="size-5" />
                   </span>
                   <div className="min-w-0">
@@ -201,7 +212,9 @@ export function HomeSections() {
                     {detail.href ? (
                       <a
                         href={detail.href}
-                        className="block truncate text-sm font-semibold hover:text-primary"
+                        target="_blank"
+                        rel="noreferrer"
+                        className={`block truncate text-sm font-semibold ${detail.whatsapp ? "hover:text-[#25D366]" : "hover:text-primary"}`}
                         dir="ltr"
                       >
                         {detail.value}

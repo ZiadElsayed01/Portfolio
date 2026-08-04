@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, MessageCircle } from "lucide-react";
 
 import heroAsset from "@/assets/hero.png";
 import { Button } from "@/components/ui/button";
@@ -68,11 +68,15 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.24, ease }}
             className="mt-8 flex flex-wrap items-center gap-3"
           >
-            <Button asChild size="lg" className="rounded-full px-6">
-              <Link to="/contact">
+            <Button
+              asChild
+              size="lg"
+              className="rounded-full px-6 bg-[#25D366] hover:bg-[#20bd5a] text-white"
+            >
+              <a href={contactInfo.whatsapp} target="_blank" rel="noreferrer">
                 {t("home.cta.contact")}
-                <ArrowRight className="size-4 rtl:rotate-180" />
-              </Link>
+                <MessageCircle className="size-4" />
+              </a>
             </Button>
             <Button asChild size="lg" variant="outline" className="rounded-full px-6">
               <Link to="/projects">{t("home.cta.projects")}</Link>
