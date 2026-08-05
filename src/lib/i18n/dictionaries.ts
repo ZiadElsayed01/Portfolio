@@ -77,7 +77,7 @@ export const dictionaries = {
     "contact.form.sent": "Your mail app is opening with the message ready to send.",
 
     "footer.rights": "All rights reserved.",
-    "footer.built": "Built with React, TypeScript, Tailwind and Motion.",
+    "footer.built": "Frontend Developer, Building modern web applications.",
 
     "notfound.project": "This project doesn't exist.",
   },
@@ -152,7 +152,7 @@ export const dictionaries = {
     "contact.form.sent": "سيتم فتح تطبيق البريد لديك والرسالة جاهزة للإرسال.",
 
     "footer.rights": "جميع الحقوق محفوظة.",
-    "footer.built": "بُني باستخدام React وTypeScript وTailwind وMotion.",
+    "footer.built": "مطور واجهات أمامية، بناء تطبيقات الويب الحديثة.",
 
     "notfound.project": "هذا المشروع غير موجود.",
   },

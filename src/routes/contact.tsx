@@ -130,13 +130,21 @@ function ContactPage() {
 
           <Reveal delay={0.15}>
             <div className="flex flex-wrap gap-3">
-              <Button asChild variant="outline" className="rounded-full">
+              <Button
+                asChild
+                variant="outline"
+                className="rounded-full border-[#24292f] text-[#24292f] hover:bg-[#24292f] hover:text-white"
+              >
                 <a href={contactInfo.github} target="_blank" rel="noreferrer">
                   <Github className="size-4" />
                   GitHub
                 </a>
               </Button>
-              <Button asChild variant="outline" className="rounded-full">
+              <Button
+                asChild
+                variant="outline"
+                className="rounded-full border-[#0077b5] text-[#0077b5] hover:bg-[#0077b5] hover:text-white"
+              >
                 <a href={contactInfo.linkedin} target="_blank" rel="noreferrer">
                   <Linkedin className="size-4" />
                   LinkedIn

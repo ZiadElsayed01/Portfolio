@@ -20,7 +20,7 @@ export function Hero() {
   ];
 
   return (
-    <section className="relative overflow-hidden border-b border-border">
+    <section className="relative overflow-hidden border-border">
       <div className="pointer-events-none absolute inset-0 grid-lines opacity-60" aria-hidden />
       <div className="pointer-events-none absolute inset-0 veil" aria-hidden />
 
@@ -88,7 +88,7 @@ export function Hero() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="GitHub"
-                className="grid size-10 place-items-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                className="grid size-10 place-items-center rounded-full border border-[#24292f] text-[#24292f] transition-colors hover:bg-[#24292f] hover:text-white"
               >
                 <Github className="size-4" />
               </a>
@@ -97,7 +97,7 @@ export function Hero() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
-                className="grid size-10 place-items-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                className="grid size-10 place-items-center rounded-full border border-[#0077b5] text-[#0077b5] transition-colors hover:bg-[#0077b5] hover:text-white"
               >
                 <Linkedin className="size-4" />
               </a>
