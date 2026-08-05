@@ -16,7 +16,7 @@ export function ThemeToggle() {
       aria-label={t("common.theme")}
       className={`rounded-full border border-border transition-colors ${
         theme === "dark"
-          ? "bg-[#a5d8ff] text-[#1e3a5f] hover:bg-[#8bc4f0]"
+          ? "bg-[#a7d7fc] text-[#1e3a5f] hover:bg-[#8bc4f0]"
           : "bg-[#eeff00] text-[#2d4a2d] hover:bg-[#b4c108]"
       }`}
     >
