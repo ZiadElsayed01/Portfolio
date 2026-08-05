@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { skillGroups } from "@/features/skills/data";
+import { ContributionGridSnake } from "@/features/shared/components/contribution-grid-snake";
 import { PageShell } from "@/features/shared/components/page-shell";
 import { Reveal } from "@/features/shared/components/reveal";
 import { SectionHeader } from "@/features/shared/components/section-header";
@@ -55,6 +56,12 @@ function SkillsPage() {
           </Reveal>
         ))}
       </div>
+
+      <Reveal delay={0.2}>
+        <div className="mt-8">
+          <ContributionGridSnake />
+        </div>
+      </Reveal>
     </PageShell>
   );
 }

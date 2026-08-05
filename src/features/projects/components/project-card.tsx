@@ -20,7 +20,7 @@ export function ProjectCard({ project, index = 0 }: { project: Project; index?: 
       <Link
         to="/projects/$slug"
         params={{ slug: project.slug }}
-        className="relative block aspect-16/9 overflow-hidden bg-muted"
+        className="relative block aspect-video overflow-hidden bg-muted"
       >
         <img
           src={project.banner}
@@ -30,7 +30,7 @@ export function ProjectCard({ project, index = 0 }: { project: Project; index?: 
           height={720}
           className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
-        <span className="absolute top-3 end-3 rounded-full bg-background/85 px-2.5 py-1 text-[11px] font-semibold backdrop-blur">
+        <span className="absolute top-3 inset-e-3 rounded-full bg-background/85 px-2.5 py-1 text-[11px] font-semibold backdrop-blur">
           {project.year}
         </span>
       </Link>

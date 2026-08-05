@@ -15,6 +15,7 @@ import { contactInfo } from "@/features/contact/data";
 import { experiences } from "@/features/experience/data";
 import { ProjectCard } from "@/features/projects/components/project-card";
 import { featuredProjects } from "@/features/projects/data";
+import { ContributionGridSnake } from "@/features/shared/components/contribution-grid-snake";
 import { Reveal } from "@/features/shared/components/reveal";
 import { SectionHeader } from "@/features/shared/components/section-header";
 import { skillGroups } from "@/features/skills/data";
@@ -198,6 +199,12 @@ export function HomeSections() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={0.2}>
+          <div className="mt-8">
+            <ContributionGridSnake />
+          </div>
+        </Reveal>
       </section>
 
       <section
