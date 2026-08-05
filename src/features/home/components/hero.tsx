@@ -88,7 +88,7 @@ export function Hero() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="GitHub"
-                className="grid size-10 place-items-center rounded-full border border-[#24292f] text-[#24292f] transition-colors hover:bg-[#24292f] hover:text-white"
+                className="grid size-10 place-items-center rounded-full border border-[#24292f] text-[#24292f] transition-colors hover:bg-[#24292f] hover:text-white dark:bg-[#24292f] dark:text-white dark:border-transparent"
               >
                 <Github className="size-4" />
               </a>
@@ -97,7 +97,7 @@ export function Hero() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
-                className="grid size-10 place-items-center rounded-full border border-[#0077b5] text-[#0077b5] transition-colors hover:bg-[#0077b5] hover:text-white"
+                className="grid size-10 place-items-center rounded-full border border-[#0077b5] text-[#0077b5] transition-colors hover:bg-[#0077b5] hover:text-white dark:bg-[#0077b5] dark:text-white dark:border-transparent"
               >
                 <Linkedin className="size-4" />
               </a>

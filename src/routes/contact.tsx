@@ -133,7 +133,7 @@ function ContactPage() {
               <Button
                 asChild
                 variant="outline"
-                className="rounded-full border-[#24292f] text-[#24292f] hover:bg-[#24292f] hover:text-white"
+                className="rounded-full border-[#24292f] text-[#24292f] hover:bg-[#24292f] hover:text-white dark:bg-[#24292f] dark:text-white dark:border-transparent"
               >
                 <a href={contactInfo.github} target="_blank" rel="noreferrer">
                   <Github className="size-4" />
@@ -143,7 +143,7 @@ function ContactPage() {
               <Button
                 asChild
                 variant="outline"
-                className="rounded-full border-[#0077b5] text-[#0077b5] hover:bg-[#0077b5] hover:text-white"
+                className="rounded-full border-[#0077b5] text-[#0077b5] hover:bg-[#0077b5] hover:text-white dark:bg-[#0077b5] dark:text-white dark:border-transparent"
               >
                 <a href={contactInfo.linkedin} target="_blank" rel="noreferrer">
                   <Linkedin className="size-4" />

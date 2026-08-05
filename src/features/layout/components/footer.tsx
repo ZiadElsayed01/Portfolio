@@ -28,7 +28,7 @@ export function Footer() {
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub"
-            className="inline-flex items-center gap-2 rounded-full border border-[#24292f] px-3 py-2 text-sm text-[#24292f] transition-colors hover:bg-[#24292f] hover:text-white"
+            className="inline-flex items-center gap-2 rounded-full border border-[#24292f] px-3 py-2 text-sm text-[#24292f] transition-colors hover:bg-[#24292f] hover:text-white dark:bg-[#24292f] dark:text-white dark:border-transparent"
           >
             <Github className="size-4" />
             GitHub
@@ -38,7 +38,7 @@ export function Footer() {
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"
-            className="inline-flex items-center gap-2 rounded-full border border-[#0077b5] px-3 py-2 text-sm text-[#0077b5] transition-colors hover:bg-[#0077b5] hover:text-white"
+            className="inline-flex items-center gap-2 rounded-full border border-[#0077b5] px-3 py-2 text-sm text-[#0077b5] transition-colors hover:bg-[#0077b5] hover:text-white dark:bg-[#0077b5] dark:text-white dark:border-transparent"
           >
             <Linkedin className="size-4" />
             LinkedIn
