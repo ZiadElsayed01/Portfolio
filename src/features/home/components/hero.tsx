@@ -68,11 +68,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.24, ease }}
             className="mt-8 flex flex-wrap items-center gap-3"
           >
-            <Button
-              asChild
-              size="lg"
-              className="rounded-full px-6 bg-[#25D366] hover:bg-[#20bd5a] text-white"
-            >
+            <Button asChild size="lg" className="rounded-full px-6 bg-primary text-white">
               <a href={contactInfo.whatsapp} target="_blank" rel="noreferrer">
                 {t("home.cta.contact")}
                 <MessageCircle className="size-4" />
