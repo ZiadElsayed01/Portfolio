@@ -104,39 +104,87 @@ function ProjectDetailsPage() {
         </div>
       </div>
 
-      <div className="mx-auto grid w-full max-w-6xl gap-12 px-5 section-padding md:px-8 lg:grid-cols-[1.35fr_0.65fr]">
-        <div className="space-y-10">
-          <Reveal>
-            <div className="overflow-hidden rounded-[1.5rem] border border-border">
-              <img
-                src={project.banner}
-                alt={`${project.title} banner`}
-                width={1280}
-                height={720}
-                className="size-full object-cover"
-              />
-            </div>
-          </Reveal>
+      <div className="section-padding space-y-6">
+        <div className="mx-auto grid w-full max-w-6xl gap-12 px-5 md:px-8 lg:grid-cols-[1.35fr_0.65fr]">
+          <div className="space-y-10">
+            <Reveal>
+              <div className="overflow-hidden rounded-[1.5rem] border border-border">
+                <img
+                  src={project.banner}
+                  alt={`${project.title} banner`}
+                  width={1280}
+                  height={720}
+                  className="size-full object-cover"
+                />
+              </div>
+            </Reveal>
 
-          <Reveal delay={0.05}>
-            <h2 className="font-display text-2xl font-bold">{t("common.overview")}</h2>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              {tl(project.longDescription)}
-            </p>
-          </Reveal>
+            <Reveal delay={0.05}>
+              <h2 className="font-display text-2xl font-bold">{t("common.overview")}</h2>
+              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                {tl(project.longDescription)}
+              </p>
+            </Reveal>
+          </div>
 
-          {project.images.length > 1 ? (
+          <aside className="space-y-6">
+            <Reveal delay={0.05}>
+              <div className="surface-panel p-6">
+                <h2 className="font-display text-lg font-bold">{t("common.technologies")}</h2>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {project.technologies.map((tech) => (
+                    <Badge key={tech} variant="secondary" className="rounded-full font-normal">
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+                <dl className="mt-6 space-y-3 border-t border-border pt-4 text-sm">
+                  <div className="flex items-center justify-between gap-4">
+                    <dt className="text-muted-foreground">Year</dt>
+                    <dd className="font-semibold">{project.year}</dd>
+                  </div>
+                </dl>
+              </div>
+            </Reveal>
+          </aside>
+        </div>
+
+        <div className="mx-auto max-w-6xl px-5 md:px-8">
+          {project.dashboardImages && project.dashboardImages.length > 0 ? (
             <Reveal delay={0.1}>
-              <h2 className="font-display text-2xl font-bold">{t("common.gallery")}</h2>
-              <div className="mt-4 grid gap-4 sm:grid-cols-2">
-                {project.images.map((image, index) => (
+              <h2 className="font-display text-2xl font-bold">Dashboard</h2>
+              <div className="mt-4 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+                {project.dashboardImages.map((image, index) => (
                   <div
                     key={`${image}-${index}`}
                     className="overflow-hidden rounded-xl border border-border"
                   >
                     <img
                       src={image}
-                      alt={`${project.title} screenshot ${index + 1}`}
+                      alt={`${project.title} dashboard screenshot ${index + 1}`}
+                      loading="lazy"
+                      width={1280}
+                      height={720}
+                      className="size-full object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          ) : null}
+
+          {project.websiteImages && project.websiteImages.length > 0 ? (
+            <Reveal delay={0.15}>
+              <h2 className="font-display text-2xl font-bold mt-8">Website</h2>
+              <div className="mt-4 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+                {project.websiteImages.map((image, index) => (
+                  <div
+                    key={`${image}-${index}`}
+                    className="overflow-hidden rounded-xl border border-border"
+                  >
+                    <img
+                      src={image}
+                      alt={`${project.title} website screenshot ${index + 1}`}
                       loading="lazy"
                       width={1280}
                       height={720}
@@ -148,27 +196,6 @@ function ProjectDetailsPage() {
             </Reveal>
           ) : null}
         </div>
-
-        <aside className="space-y-6">
-          <Reveal delay={0.05}>
-            <div className="surface-panel p-6">
-              <h2 className="font-display text-lg font-bold">{t("common.technologies")}</h2>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {project.technologies.map((tech) => (
-                  <Badge key={tech} variant="secondary" className="rounded-full font-normal">
-                    {tech}
-                  </Badge>
-                ))}
-              </div>
-              <dl className="mt-6 space-y-3 border-t border-border pt-4 text-sm">
-                <div className="flex items-center justify-between gap-4">
-                  <dt className="text-muted-foreground">Year</dt>
-                  <dd className="font-semibold">{project.year}</dd>
-                </div>
-              </dl>
-            </div>
-          </Reveal>
-        </aside>
       </div>
     </article>
   );
