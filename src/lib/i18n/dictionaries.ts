@@ -25,6 +25,7 @@ export const dictionaries = {
     "common.technologies": "Technologies",
     "common.gallery": "Gallery",
     "common.overview": "Overview",
+    "common.testingCredentials": "Testing Credentials",
 
     "home.greeting": "Hello, I'm",
     "home.name": "Ziad El-Sayed",
@@ -101,6 +102,7 @@ export const dictionaries = {
     "common.technologies": "التقنيات",
     "common.gallery": "معرض الصور",
     "common.overview": "نظرة عامة",
+    "common.testingCredentials": "بيانات الاختبار",
 
     "home.greeting": "أهلاً، أنا",
     "home.name": "زياد السيد",

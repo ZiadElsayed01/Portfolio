@@ -169,14 +169,26 @@ function ProjectDetailsPage() {
         </div>
 
         <div className="mx-auto max-w-6xl px-5 md:px-8">
+          {project.testingCredentials ? (
+            <>
+              <h3 className="font-display text-lg font-bold text-red-600 underline">
+                {t("common.testingCredentials")}
+              </h3>
+              <div className="surface-panel my-6 py-6 px-4 rounded-lg">
+                <p className="whitespace-pre-line text-zinc-900 dark:text-zinc-100">
+                  {tl(project.testingCredentials)}
+                </p>
+              </div>
+            </>
+          ) : null}
           {project.dashboardImages && project.dashboardImages.length > 0 ? (
             <Reveal delay={0.1}>
-              <h2 className="font-display text-2xl font-bold">Dashboard</h2>
+              <h2 className="font-display text-2xl font-bold mb-6">Dashboard</h2>
               <div className="mt-4 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
                 {project.dashboardImages.map((image, index) => (
                   <div
                     key={`${image}-${index}`}
-                    className="overflow-hidden rounded-xl border border-border cursor-pointer group"
+                    className="overflow-hidden h-75 rounded-xl border border-border cursor-pointer group"
                     onClick={() =>
                       handleImageClick(image, `${project.title} dashboard screenshot ${index + 1}`)
                     }
@@ -202,7 +214,7 @@ function ProjectDetailsPage() {
                 {project.websiteImages.map((image, index) => (
                   <div
                     key={`${image}-${index}`}
-                    className="overflow-hidden rounded-xl border border-border cursor-pointer group"
+                    className="overflow-hidden h-75 rounded-xl border border-border cursor-pointer group"
                     onClick={() =>
                       handleImageClick(image, `${project.title} website screenshot ${index + 1}`)
                     }
