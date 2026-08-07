@@ -1,9 +1,11 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ExternalLink, Github, Lock } from "lucide-react";
+import * as React from "react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { getProjectBySlug, type Project } from "@/features/projects/data";
+import { ImagePreviewModal } from "@/features/shared/components/image-preview-modal";
 import { Reveal } from "@/features/shared/components/reveal";
 import { useI18n } from "@/lib/i18n";
 
@@ -49,6 +51,20 @@ function ProjectNotFound() {
 function ProjectDetailsPage() {
   const { project } = Route.useLoaderData() as { project: Project };
   const { t, tl } = useI18n();
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [selectedImage, setSelectedImage] = React.useState<{ src: string; alt: string } | null>(
+    null,
+  );
+
+  const handleImageClick = (src: string, alt: string) => {
+    setSelectedImage({ src, alt });
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedImage(null);
+  };
 
   return (
     <article>
@@ -108,13 +124,16 @@ function ProjectDetailsPage() {
         <div className="mx-auto grid w-full max-w-6xl gap-12 px-5 md:px-8 lg:grid-cols-[1.35fr_0.65fr]">
           <div className="space-y-10">
             <Reveal>
-              <div className="overflow-hidden rounded-[1.5rem] border border-border">
+              <div
+                className="overflow-hidden rounded-[1.5rem] border border-border cursor-pointer group"
+                onClick={() => handleImageClick(project.banner, `${project.title} banner`)}
+              >
                 <img
                   src={project.banner}
                   alt={`${project.title} banner`}
                   width={1280}
                   height={720}
-                  className="size-full object-cover"
+                  className="size-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
             </Reveal>
@@ -157,7 +176,10 @@ function ProjectDetailsPage() {
                 {project.dashboardImages.map((image, index) => (
                   <div
                     key={`${image}-${index}`}
-                    className="overflow-hidden rounded-xl border border-border"
+                    className="overflow-hidden rounded-xl border border-border cursor-pointer group"
+                    onClick={() =>
+                      handleImageClick(image, `${project.title} dashboard screenshot ${index + 1}`)
+                    }
                   >
                     <img
                       src={image}
@@ -165,7 +187,7 @@ function ProjectDetailsPage() {
                       loading="lazy"
                       width={1280}
                       height={720}
-                      className="size-full object-cover"
+                      className="size-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
                 ))}
@@ -180,7 +202,10 @@ function ProjectDetailsPage() {
                 {project.websiteImages.map((image, index) => (
                   <div
                     key={`${image}-${index}`}
-                    className="overflow-hidden rounded-xl border border-border"
+                    className="overflow-hidden rounded-xl border border-border cursor-pointer group"
+                    onClick={() =>
+                      handleImageClick(image, `${project.title} website screenshot ${index + 1}`)
+                    }
                   >
                     <img
                       src={image}
@@ -188,7 +213,7 @@ function ProjectDetailsPage() {
                       loading="lazy"
                       width={1280}
                       height={720}
-                      className="size-full object-cover"
+                      className="size-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
                 ))}
@@ -197,6 +222,15 @@ function ProjectDetailsPage() {
           ) : null}
         </div>
       </div>
+
+      {selectedImage && (
+        <ImagePreviewModal
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+          imageSrc={selectedImage.src}
+          imageAlt={selectedImage.alt}
+        />
+      )}
     </article>
   );
 }
