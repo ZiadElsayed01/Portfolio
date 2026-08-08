@@ -190,7 +190,7 @@ export const projects: Project[] = [
       ar: "البريد الإلكتروني: ziadelsayed046@gmail.com / كلمة السر: Ziad100",
     },
     github: "https://github.com/ZiadElsayed01/FreshCart",
-    demo: "https://fresh-cart-route.vercel.app/login",
+    demo: "https://fresh-cart-route.vercel.app/",
   },
 ];
 
