@@ -136,32 +136,6 @@ export const projects: Project[] = [
     demo: "https://grad-project-mis.vercel.app/",
   },
   {
-    slug: "elfaredaa",
-    title: "Elfaredaa",
-    year: "2026",
-    description: {
-      en: "A modern business website showcasing services, company details, and contact information with a clean, professional design.",
-      ar: "موقع أعمال حديث يعرض الخدمات وتفاصيل الشركة ومعلومات الاتصال بتصميم نظيف واحترافي.",
-    },
-    longDescription: {
-      en: "A Next.js 16 business website built with React 19 and TypeScript. Features a responsive design with sections for home, about, services, details, and contact. The website uses Tailwind CSS for styling and follows modern web design principles to provide an excellent user experience. Built with performance and accessibility in mind, ensuring fast load times and easy navigation for all users.",
-      ar: "موقع أعمال Next.js 16 مُبني بـ React 19 وTypeScript. يتميز بتصميم متجاوب مع أقسام للرئيسية، من نحن، الخدمات، التفاصيل، واتصل بنا. يستخدم الموقع Tailwind CSS للتنسيق ويتبع مبادئ تصميم الويب الحديثة لتوفير تجربة مستخدم ممتازة. مُبني مع مراعاة الأداء وإمكانية الوصول، مما يضمن أوقات تحميل سريعة وسهولة التنقل لجميع المستخدمين.",
-    },
-    technologies: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-    banner: elfaredaaBanner,
-    websiteImages: [
-      elfaredaaBanner,
-      elfaredaaHome,
-      elfaredaaAbout,
-      elfaredaaServices,
-      elfaredaaDetails,
-      elfaredaaContact,
-    ],
-    featured: true,
-    github: "https://github.com/ZiadElsayed01/ElfareedaKW",
-    demo: "https://elfareeda-kw.vercel.app/",
-  },
-  {
     slug: "fresh-cart",
     title: "FreshCart",
     year: "2026",
@@ -191,6 +165,32 @@ export const projects: Project[] = [
     },
     github: "https://github.com/ZiadElsayed01/FreshCart",
     demo: "https://fresh-cart-route.vercel.app/",
+  },
+  {
+    slug: "elfaredaa",
+    title: "Elfaredaa",
+    year: "2026",
+    description: {
+      en: "A modern business website showcasing services, company details, and contact information with a clean, professional design.",
+      ar: "موقع أعمال حديث يعرض الخدمات وتفاصيل الشركة ومعلومات الاتصال بتصميم نظيف واحترافي.",
+    },
+    longDescription: {
+      en: "A Next.js 16 business website built with React 19 and TypeScript. Features a responsive design with sections for home, about, services, details, and contact. The website uses Tailwind CSS for styling and follows modern web design principles to provide an excellent user experience. Built with performance and accessibility in mind, ensuring fast load times and easy navigation for all users.",
+      ar: "موقع أعمال Next.js 16 مُبني بـ React 19 وTypeScript. يتميز بتصميم متجاوب مع أقسام للرئيسية، من نحن، الخدمات، التفاصيل، واتصل بنا. يستخدم الموقع Tailwind CSS للتنسيق ويتبع مبادئ تصميم الويب الحديثة لتوفير تجربة مستخدم ممتازة. مُبني مع مراعاة الأداء وإمكانية الوصول، مما يضمن أوقات تحميل سريعة وسهولة التنقل لجميع المستخدمين.",
+    },
+    technologies: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "Shadcn UI"],
+    banner: elfaredaaBanner,
+    websiteImages: [
+      elfaredaaBanner,
+      elfaredaaHome,
+      elfaredaaAbout,
+      elfaredaaServices,
+      elfaredaaDetails,
+      elfaredaaContact,
+    ],
+    featured: true,
+    github: "https://github.com/ZiadElsayed01/ElfareedaKW",
+    demo: "https://elfareeda-kw.vercel.app/",
   },
 ];
 
