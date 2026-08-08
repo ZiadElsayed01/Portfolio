@@ -29,6 +29,14 @@ import elfaredaaAbout from "@/assets/Projects/elfaredaa/Website/About.png";
 import elfaredaaServices from "@/assets/Projects/elfaredaa/Website/Services.png";
 import elfaredaaDetails from "@/assets/Projects/elfaredaa/Website/Details.png";
 import elfaredaaContact from "@/assets/Projects/elfaredaa/Website/Contact.png";
+import freshCartBanner from "@/assets/Projects/fresh-cart/Website/Bannar.png";
+import freshCartHome from "@/assets/Projects/fresh-cart/Website/Home.png";
+import freshCartCategories from "@/assets/Projects/fresh-cart/Website/Categories.png";
+import freshCartProducts from "@/assets/Projects/fresh-cart/Website/Products.png";
+import freshCartCart from "@/assets/Projects/fresh-cart/Website/Cart.png";
+import freshCartOrders from "@/assets/Projects/fresh-cart/Website/Orders.png";
+import freshCartLogin from "@/assets/Projects/fresh-cart/Website/Login.png";
+import freshCartRegister from "@/assets/Projects/fresh-cart/Website/Register.png";
 
 export type Project = {
   slug: string;
@@ -152,6 +160,37 @@ export const projects: Project[] = [
     featured: true,
     github: "https://github.com/ZiadElsayed01/ElfareedaKW",
     demo: "https://elfareeda-kw.vercel.app/",
+  },
+  {
+    slug: "fresh-cart",
+    title: "FreshCart",
+    year: "2026",
+    description: {
+      en: "A full-featured e-commerce platform with product catalog, shopping cart, order management, and user authentication.",
+      ar: "منصة تجارة إلكترونية متكاملة مع كتالوج منتجات، سلة تسوق، إدارة الطلبات، ومصادقة المستخدمين.",
+    },
+    longDescription: {
+      en: "A comprehensive e-commerce application built with Next.js 16, React 19, and TypeScript. Features include product browsing by categories, shopping cart functionality, order management, user registration and login, and a responsive modern UI. The platform is designed to provide a seamless shopping experience with fast performance and intuitive navigation. Built with Tailwind CSS and Shadcn UI for a clean, professional appearance.",
+      ar: "تطبيق تجارة إلكترونية شامل مُبني بـ Next.js 16 وReact 19 وTypeScript. تشمل الميزات تصفح المنتجات حسب الفئات، وظيفة سلة التسوق، إدارة الطلبات، تسجيل المستخدمين وتسجيل الدخول، وواجهة مستخدم عصرية متجاوبة. المنصة مصممة لتوفير تجربة تسوق سلسة مع أداء سريع وتنقل بديهي. مُبني بـ Tailwind CSS وShadcn UI لمظهر نظيف واحترافي.",
+    },
+    technologies: ["React 19", "TypeScript", "Tailwind CSS", "Context API", "Axios"],
+    banner: freshCartBanner,
+    websiteImages: [
+      freshCartLogin,
+      freshCartRegister,
+      freshCartProducts,
+      freshCartCart,
+      freshCartHome,
+      freshCartCategories,
+      freshCartOrders,
+    ],
+    featured: true,
+    testingCredentials: {
+      en: "Email: ziadelsayed046@gmail.com / Password: Ziad100",
+      ar: "البريد الإلكتروني: ziadelsayed046@gmail.com / كلمة السر: Ziad100",
+    },
+    github: "https://github.com/ZiadElsayed01/FreshCart",
+    demo: "https://fresh-cart-route.vercel.app/login",
   },
 ];
 
