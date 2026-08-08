@@ -92,8 +92,8 @@ export const projects: Project[] = [
     github: "https://github.com/ZiadElsayed01/Exam-App",
     demo: "https://exam-app-topaz.vercel.app/",
     testingCredentials: {
-      en: "Admin: Ziad / Ziadelsayed_100\nUser: Ziad0 / Ziadelsayed_100",
-      ar: "المدير: Ziad / Ziadelsayed_100\nالمستخدم: Ziad0 / Ziadelsayed_100",
+      en: "Admin: Ziad / Password: Ziadelsayed_100\nUser: Ziad0 / Password: Ziadelsayed_100",
+      ar: "المدير: Ziad / كلمة السر: Ziadelsayed_100\nالمستخدم: Ziad0 / كلمة السر: Ziadelsayed_100",
     },
   },
   {
@@ -109,8 +109,8 @@ export const projects: Project[] = [
       ar: "نظام معلومات إداري متكامل مُبني بـ Node.js وTypeScript وNext.js وReact. يستخدم المشروع Docker للحاويات وbun لتشغيل السكريبتات. تشمل الميزات إدارة المعلمين، تسجيل المواد، معالجة الطلبات، وإعداد تقارير شاملة. توفر الواجهة الخلفية واجهة برمجة تطبيقات قوية بينما توفر الواجهة الأمامية واجهة مستخدم عصرية ومتجاوبة لإدارة العمليات التعليمية بكفاءة.",
     },
     testingCredentials: {
-      en: "Admin: youssef.ali@example.com / test123\nStudent: mohamed.ali@example.com / test123",
-      ar: "المدير: youssef.ali@example.com / test123\nالطالب: mohamed.ali@example.com / test123",
+      en: "Admin: youssef.ali@example.com / Password: test123\nStudent: mohamed.ali@example.com / Password: test123",
+      ar: "المدير: youssef.ali@example.com / كلمة السر: test123\nالطالب: mohamed.ali@example.com / كلمة السر: test123",
     },
     technologies: ["Node.js", "TypeScript", "Next.js", "React", "Docker", "Docker Compose", "Bun"],
     banner: misBanner,
