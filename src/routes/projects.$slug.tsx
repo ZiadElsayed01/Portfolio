@@ -103,6 +103,14 @@ function ProjectDetailsPage() {
                 </a>
               </Button>
             ) : null}
+            {project.dashboard ? (
+              <Button asChild size="lg" variant="outline" className="rounded-full px-6">
+                <a href={project.dashboard} target="_blank" rel="noreferrer">
+                  {t("common.dashboard")}
+                  <ExternalLink className="size-4" />
+                </a>
+              </Button>
+            ) : null}
             {project.github ? (
               <Button asChild size="lg" variant="outline" className="rounded-full px-6">
                 <a href={project.github} target="_blank" rel="noreferrer">

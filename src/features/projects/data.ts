@@ -37,6 +37,16 @@ import freshCartCart from "@/assets/Projects/fresh-cart/Website/Cart.png";
 import freshCartOrders from "@/assets/Projects/fresh-cart/Website/Orders.png";
 import freshCartLogin from "@/assets/Projects/fresh-cart/Website/Login.png";
 import freshCartRegister from "@/assets/Projects/fresh-cart/Website/Register.png";
+import medicalSystemBanner from "@/assets/Projects/medical-system/Website/Bannar.png";
+import medicalSystemAbout from "@/assets/Projects/medical-system/Website/About.png";
+import medicalSystemContact from "@/assets/Projects/medical-system/Website/Contact.png";
+import medicalSystemProductDetails from "@/assets/Projects/medical-system/Website/ProductDetials.png";
+import medicalSystemProducts from "@/assets/Projects/medical-system/Website/Products.png";
+import medicalSystemDashboardHome from "@/assets/Projects/medical-system/Dashboard/DashboardHome.png";
+import medicalSystemDashboardCompany from "@/assets/Projects/medical-system/Dashboard/DashboardCompany.png";
+import medicalSystemDashboardContact from "@/assets/Projects/medical-system/Dashboard/DashboardContact.png";
+import medicalSystemDashboardProducts from "@/assets/Projects/medical-system/Dashboard/DashboardProducts.png";
+import medicalSystemDashboardAddCompany from "@/assets/Projects/medical-system/Dashboard/DashboardADD Company.png";
 
 export type Project = {
   slug: string;
@@ -49,12 +59,49 @@ export type Project = {
   dashboardImages?: string[];
   websiteImages?: string[];
   demo?: string;
+  dashboard?: string;
   github?: string;
   featured?: boolean;
   testingCredentials?: Localized;
 };
 
 export const projects: Project[] = [
+  {
+    slug: "medical-system",
+    title: "Medical System",
+    year: "2026",
+    description: {
+      en: "A comprehensive medical management system with company management, product catalog, and contact management features.",
+      ar: "نظام طبي شامل مع إدارة الشركات، كتالوج المنتجات، وميزات إدارة الاتصال.",
+    },
+    longDescription: {
+      en: "A full-stack medical management system built with Next.js, React, and TypeScript. Features include company management, product catalog with detailed views, contact management, and a comprehensive dashboard for administrators. The system provides role-based access control, allowing different users to manage various aspects of the medical system. Built with modern web technologies for optimal performance and user experience.",
+      ar: "نظام طبي متكامل مُبني بـ Next.js وReact وTypeScript. تشمل الميزات إدارة الشركات، كتالوج المنتجات مع عرض تفصيلي، إدارة الاتصال، ولوحة تحكم شاملة للمسؤولين. يوفر النظام صلاحيات حسب الدور، مما يسمح للمستخدمين المختلفين بإدارة جوانب مختلفة من النظام الطبي. مُبني بتقنيات الويب الحديثة للأداء الأمثل وتجربة المستخدم.",
+    },
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Shadcn UI"],
+    banner: medicalSystemBanner,
+    dashboardImages: [
+      medicalSystemDashboardHome,
+      medicalSystemDashboardProducts,
+      medicalSystemDashboardCompany,
+      medicalSystemDashboardAddCompany,
+      medicalSystemDashboardContact,
+    ],
+    websiteImages: [
+      medicalSystemBanner,
+      medicalSystemProducts,
+      medicalSystemProductDetails,
+      medicalSystemAbout,
+      medicalSystemContact,
+    ],
+    featured: true,
+    demo: "https://medical-systems.vercel.app/",
+    dashboard: "https://medical-systems.vercel.app/dashboard",
+    testingCredentials: {
+      en: "Admin: admin@medical-system.com / Password: Admin_123",
+      ar: "المدير: admin@medical-system.com / كلمة السر: Admin_123",
+    },
+  },
   {
     slug: "exam-app",
     title: "Exam App",
