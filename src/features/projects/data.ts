@@ -47,6 +47,20 @@ import medicalSystemDashboardCompany from "@/assets/Projects/medical-system/Dash
 import medicalSystemDashboardContact from "@/assets/Projects/medical-system/Dashboard/DashboardContact.png";
 import medicalSystemDashboardProducts from "@/assets/Projects/medical-system/Dashboard/DashboardProducts.png";
 import medicalSystemDashboardAddCompany from "@/assets/Projects/medical-system/Dashboard/DashboardADD Company.png";
+import smsBanner from "@/assets/Projects/SMS/Dashborad/Bannar.png";
+import smsAddDepartments from "@/assets/Projects/SMS/Dashborad/AddDepartments.png";
+import smsAddGrade from "@/assets/Projects/SMS/Dashborad/AddGrade.png";
+import smsAddTeacher from "@/assets/Projects/SMS/Dashborad/AddTeacher.png";
+import smsClasses from "@/assets/Projects/SMS/Dashborad/Classed.png";
+import smsDepartments from "@/assets/Projects/SMS/Dashborad/Departments.png";
+import smsEvents from "@/assets/Projects/SMS/Dashborad/Events.png";
+import smsGrades from "@/assets/Projects/SMS/Dashborad/Grades.png";
+import smsRecordAttendance from "@/assets/Projects/SMS/Dashborad/RecordAttendance.png";
+import smsStudentsAttendance from "@/assets/Projects/SMS/Dashborad/StudentsAttendance.png";
+import smsStudentsList from "@/assets/Projects/SMS/Dashborad/StudentsLinst.png";
+import smsTeacher from "@/assets/Projects/SMS/Dashborad/Teacher.png";
+import smsTeacherInfo from "@/assets/Projects/SMS/Dashborad/TeacherInfo.png";
+import smsUpdateSchool from "@/assets/Projects/SMS/Dashborad/UpdateSchool.png";
 
 export type Project = {
   slug: string;
@@ -66,6 +80,59 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    slug: "school-management-system",
+    title: "School Management System",
+    year: "2026",
+    description: {
+      en: "A comprehensive school management system with attendance tracking, grade management, teacher administration, and department organization features.",
+      ar: "نظام إدارة مدرسي شامل مع تتبع الحضور، إدارة الدرجات، إدارة المعلمين، وتنظيم الأقسام.",
+    },
+    longDescription: {
+      en: "A full-stack school management system built with React 19, TypeScript, and Vite. Features include student attendance tracking, grade management, teacher administration, department organization, class management, and event scheduling. The system provides role-based access control for managers, assistants, and teachers. Built with modern web technologies including Tailwind CSS, Radix UI components, TanStack React Query for data fetching, Formik and Yup for form validation, and React Router DOM for navigation. The project was accepted by the Directorate of Education in Al-Jahra City, Kuwait.",
+      ar: "نظام إدارة مدرسي متكامل مُبني بـ React 19 وTypeScript وVite. تشمل الميزات تتبع حضور الطلاب، إدارة الدرجات، إدارة المعلمين، تنظيم الأقسام، إدارة الفصول، وجدولة الأحداث. يوفر النظام صلاحيات حسب الدور للمديرين والمساعدين والمعلمين. مُبني بتقنيات الويب الحديثة بما في ذلك Tailwind CSS، مكوّنات Radix UI، TanStack React Query لجلب البيانات، Formik وYup للتحقق من النماذج، وReact Router DOM للتنقل. تم قبول المشروع من قبل مديرية التربية في منطقة الجهراء، الكويت.",
+    },
+    technologies: [
+      "React 19",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Radix UI",
+      "TanStack React Query",
+      "Formik",
+      "Yup",
+      "Axios",
+      "React Router DOM",
+      "Lucide React",
+      "date-fns",
+      "react-day-picker",
+      "html2canvas-pro",
+      "jspdf",
+      "jspdf-autotable",
+    ],
+    banner: smsBanner,
+    dashboardImages: [
+      smsUpdateSchool,
+      smsTeacher,
+      smsAddTeacher,
+      smsStudentsList,
+      smsStudentsAttendance,
+      smsDepartments,
+      smsAddDepartments,
+      smsGrades,
+      smsAddGrade,
+      smsClasses,
+      smsEvents,
+      smsTeacherInfo,
+      smsRecordAttendance,
+    ],
+    featured: true,
+    testingCredentials: {
+      en: "Manager: 28503151234567 / password: Admin123\nAssistant: 30206040400518 / password: Admin123\nTeacher (e.g. Ahmed): 30205040400518 / password: teacher123",
+      ar: "المدير: 28503151234567 / كلمة المرور : Admin123\nالمساعد: 30206040400518 / كلمة المرور : Admin123\nالمعلم (مثلاً أحمد): 30205040400518 / كلمة المرور : teacher123",
+    },
+    demo: "https://schools-managment-system-murex.vercel.app/",
+  },
   {
     slug: "medical-system",
     title: "Medical System",

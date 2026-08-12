@@ -77,7 +77,7 @@ function ProjectDetailsPage() {
             height={720}
             className="size-full object-cover opacity-30"
           />
-          <div className="absolute inset-0 bg-linear-to-t from-background via-background/85 to-background/60" />
+          <div className="absolute inset-0 bg-linear-to-t from-background via-background/65 to-background/60" />
         </div>
 
         <div className="relative mx-auto w-full max-w-6xl px-5 py-16 md:px-8 md:py-24">
