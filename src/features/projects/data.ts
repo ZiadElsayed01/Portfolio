@@ -131,7 +131,7 @@ export const projects: Project[] = [
       en: "Manager: 28503151234567 / password: Admin123\nAssistant: 30206040400518 / password: Admin123\nTeacher (e.g. Ahmed): 30205040400518 / password: teacher123",
       ar: "المدير: 28503151234567 / كلمة المرور : Admin123\nالمساعد: 30206040400518 / كلمة المرور : Admin123\nالمعلم (مثلاً أحمد): 30205040400518 / كلمة المرور : teacher123",
     },
-    demo: "https://schools-managment-system-murex.vercel.app/",
+    demo: "https://schools-managment-system.vercel.app/",
   },
   {
     slug: "medical-system",
@@ -212,7 +212,7 @@ export const projects: Project[] = [
     ],
     featured: true,
     github: "https://github.com/ZiadElsayed01/Exam-App",
-    demo: "https://exam-app-topaz.vercel.app/",
+    demo: "https://exams-management-systems.vercel.app/",
     testingCredentials: {
       en: "Admin: Ziad / Password: Ziadelsayed_100\nUser: Ziad0 / Password: Ziadelsayed_100",
       ar: "المدير: Ziad / كلمة السر: Ziadelsayed_100\nالمستخدم: Ziad0 / كلمة السر: Ziadelsayed_100",
